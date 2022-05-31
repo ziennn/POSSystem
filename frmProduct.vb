@@ -63,6 +63,11 @@ Public Class frmProduct
                 cn.Close()
                 MsgBox("Record has been successfully saved!", vbInformation)
                 Clear()
+
+                With frmProductList
+                    .LoadRecord()
+                End With
+
             End If
         Catch ex As Exception
             cn.Close()
@@ -97,6 +102,7 @@ Public Class frmProduct
         cboCategory.Text = ""
         cboSize.Text = ""
         cboStatus.Text = ""
+        PictureBox1.BackgroundImage = Nothing
         btnSave.Enabled = True
         btnSave.Enabled = False
         txtDescription.Focus()
@@ -116,5 +122,13 @@ Public Class frmProduct
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         Clear()
+    End Sub
+
+    Private Sub frmProduct_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+
+    Private Sub cboCategory_KeyPress(sender As Object, e As KeyPressEventArgs) Handles cboCategory.KeyPress
+        e.Handled = True
     End Sub
 End Class

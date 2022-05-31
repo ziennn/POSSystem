@@ -5,6 +5,7 @@
 
     Private Sub btnProduct_Click(sender As Object, e As EventArgs) Handles btnProduct.Click
         With frmProductList
+            .LoadRecord()
             .ShowDialog()
         End With
     End Sub
