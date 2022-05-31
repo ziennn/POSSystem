@@ -17,6 +17,10 @@ Public Class frmCategory
                 MsgBox("Category has been successfully saved!", vbInformation)
                 txtCategory.Clear()
                 txtCategory.Focus()
+                With frmProduct
+                    .LoadCategory()
+                End With
+
             End If
         Catch ex As Exception
             cn.Close()

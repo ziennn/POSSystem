@@ -62,6 +62,7 @@ Partial Class frmCategory
         'txtCategory
         '
         Me.txtCategory.BackColor = System.Drawing.SystemColors.Control
+        Me.txtCategory.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtCategory.Location = New System.Drawing.Point(45, 70)
         Me.txtCategory.Name = "txtCategory"
         Me.txtCategory.Size = New System.Drawing.Size(432, 28)
