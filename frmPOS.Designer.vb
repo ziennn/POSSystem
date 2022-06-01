@@ -41,7 +41,8 @@ Partial Class frmPOS
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.CategoryFlowLayoutPanel = New System.Windows.Forms.FlowLayoutPanel()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -49,22 +50,27 @@ Partial Class frmPOS
         Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column6 = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.MenuFlowLayoutPanel = New System.Windows.Forms.FlowLayoutPanel()
+        Me.SizeFlowLayoutPanel = New System.Windows.Forms.FlowLayoutPanel()
+        Me.Button8 = New System.Windows.Forms.Button()
+        Me.Button9 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.SizeFlowLayoutPanel.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
         '
-        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(48, Byte), Integer), CType(CType(48, Byte), Integer), CType(CType(48, Byte), Integer))
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(43, Byte), Integer))
         Me.Panel1.Controls.Add(Me.PictureBox1)
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1398, 50)
+        Me.Panel1.Size = New System.Drawing.Size(1498, 50)
         Me.Panel1.TabIndex = 0
         '
         'PictureBox1
@@ -82,7 +88,7 @@ Partial Class frmPOS
         Me.Label2.Dock = System.Windows.Forms.DockStyle.Right
         Me.Label2.Font = New System.Drawing.Font("Segoe UI", 18.0!, System.Drawing.FontStyle.Bold)
         Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(14, Byte), Integer), CType(CType(172, Byte), Integer), CType(CType(81, Byte), Integer))
-        Me.Label2.Location = New System.Drawing.Point(890, 0)
+        Me.Label2.Location = New System.Drawing.Point(990, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(508, 50)
         Me.Label2.TabIndex = 5
@@ -112,7 +118,7 @@ Partial Class frmPOS
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel2.Location = New System.Drawing.Point(0, 648)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1398, 50)
+        Me.Panel2.Size = New System.Drawing.Size(1498, 50)
         Me.Panel2.TabIndex = 1
         '
         'Button7
@@ -132,13 +138,13 @@ Partial Class frmPOS
         '
         'Button6
         '
-        Me.Button6.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(124, Byte), Integer), CType(CType(33, Byte), Integer))
+        Me.Button6.BackColor = System.Drawing.Color.FromArgb(CType(CType(167, Byte), Integer), CType(CType(12, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.Button6.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Button6.FlatAppearance.BorderSize = 0
         Me.Button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button6.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button6.ForeColor = System.Drawing.Color.White
-        Me.Button6.Location = New System.Drawing.Point(1224, -2)
+        Me.Button6.Location = New System.Drawing.Point(1325, -2)
         Me.Button6.Name = "Button6"
         Me.Button6.Size = New System.Drawing.Size(170, 50)
         Me.Button6.TabIndex = 5
@@ -207,7 +213,7 @@ Partial Class frmPOS
         '
         'Button1
         '
-        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(124, Byte), Integer), CType(CType(33, Byte), Integer))
+        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(212, Byte), Integer), CType(CType(103, Byte), Integer), CType(CType(28, Byte), Integer))
         Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Button1.FlatAppearance.BorderSize = 0
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -220,13 +226,29 @@ Partial Class frmPOS
         Me.Button1.Text = "NEW ORDER"
         Me.Button1.UseVisualStyleBackColor = False
         '
-        'FlowLayoutPanel1
+        'Button4
         '
-        Me.FlowLayoutPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(2, 96)
-        Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
-        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(875, 546)
-        Me.FlowLayoutPanel1.TabIndex = 2
+        Me.Button4.BackColor = System.Drawing.Color.DimGray
+        Me.Button4.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button4.FlatAppearance.BorderSize = 0
+        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button4.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button4.ForeColor = System.Drawing.Color.White
+        Me.Button4.Location = New System.Drawing.Point(3, 95)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(127, 40)
+        Me.Button4.TabIndex = 7
+        Me.Button4.Text = "LARGE"
+        Me.Button4.UseVisualStyleBackColor = False
+        '
+        'CategoryFlowLayoutPanel
+        '
+        Me.CategoryFlowLayoutPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.CategoryFlowLayoutPanel.Font = New System.Drawing.Font("Calibri", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CategoryFlowLayoutPanel.Location = New System.Drawing.Point(2, 96)
+        Me.CategoryFlowLayoutPanel.Name = "CategoryFlowLayoutPanel"
+        Me.CategoryFlowLayoutPanel.Size = New System.Drawing.Size(135, 397)
+        Me.CategoryFlowLayoutPanel.TabIndex = 2
         '
         'DataGridView1
         '
@@ -252,12 +274,12 @@ Partial Class frmPOS
         DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle6
         Me.DataGridView1.EnableHeadersVisualStyles = False
-        Me.DataGridView1.Location = New System.Drawing.Point(886, 96)
+        Me.DataGridView1.Location = New System.Drawing.Point(997, 96)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowHeadersVisible = False
         Me.DataGridView1.RowHeadersWidth = 51
         Me.DataGridView1.RowTemplate.Height = 24
-        Me.DataGridView1.Size = New System.Drawing.Size(510, 546)
+        Me.DataGridView1.Size = New System.Drawing.Size(498, 545)
         Me.DataGridView1.TabIndex = 3
         '
         'Column1
@@ -315,14 +337,66 @@ Partial Class frmPOS
         Me.Column6.Name = "Column6"
         Me.Column6.Width = 6
         '
+        'MenuFlowLayoutPanel
+        '
+        Me.MenuFlowLayoutPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.MenuFlowLayoutPanel.Location = New System.Drawing.Point(140, 96)
+        Me.MenuFlowLayoutPanel.Name = "MenuFlowLayoutPanel"
+        Me.MenuFlowLayoutPanel.Size = New System.Drawing.Size(854, 545)
+        Me.MenuFlowLayoutPanel.TabIndex = 3
+        '
+        'SizeFlowLayoutPanel
+        '
+        Me.SizeFlowLayoutPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.SizeFlowLayoutPanel.Controls.Add(Me.Button8)
+        Me.SizeFlowLayoutPanel.Controls.Add(Me.Button9)
+        Me.SizeFlowLayoutPanel.Controls.Add(Me.Button4)
+        Me.SizeFlowLayoutPanel.Font = New System.Drawing.Font("Calibri", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SizeFlowLayoutPanel.Location = New System.Drawing.Point(2, 496)
+        Me.SizeFlowLayoutPanel.Name = "SizeFlowLayoutPanel"
+        Me.SizeFlowLayoutPanel.Size = New System.Drawing.Size(135, 145)
+        Me.SizeFlowLayoutPanel.TabIndex = 3
+        '
+        'Button8
+        '
+        Me.Button8.BackColor = System.Drawing.Color.DimGray
+        Me.Button8.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button8.FlatAppearance.BorderSize = 0
+        Me.Button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button8.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button8.ForeColor = System.Drawing.Color.White
+        Me.Button8.Location = New System.Drawing.Point(3, 3)
+        Me.Button8.Name = "Button8"
+        Me.Button8.Size = New System.Drawing.Size(127, 40)
+        Me.Button8.TabIndex = 8
+        Me.Button8.Text = "SMALL"
+        Me.Button8.UseVisualStyleBackColor = False
+        '
+        'Button9
+        '
+        Me.Button9.BackColor = System.Drawing.Color.DimGray
+        Me.Button9.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button9.FlatAppearance.BorderSize = 0
+        Me.Button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button9.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button9.ForeColor = System.Drawing.Color.White
+        Me.Button9.Location = New System.Drawing.Point(3, 49)
+        Me.Button9.Name = "Button9"
+        Me.Button9.Size = New System.Drawing.Size(127, 40)
+        Me.Button9.TabIndex = 9
+        Me.Button9.Text = "MEDIUM"
+        Me.Button9.UseVisualStyleBackColor = False
+        '
         'frmPOS
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1398, 698)
+        Me.ClientSize = New System.Drawing.Size(1498, 698)
         Me.ControlBox = False
+        Me.Controls.Add(Me.SizeFlowLayoutPanel)
+        Me.Controls.Add(Me.MenuFlowLayoutPanel)
         Me.Controls.Add(Me.DataGridView1)
-        Me.Controls.Add(Me.FlowLayoutPanel1)
+        Me.Controls.Add(Me.CategoryFlowLayoutPanel)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
@@ -333,6 +407,7 @@ Partial Class frmPOS
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.SizeFlowLayoutPanel.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -347,7 +422,7 @@ Partial Class frmPOS
     Friend WithEvents Button1 As Button
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
+    Friend WithEvents CategoryFlowLayoutPanel As FlowLayoutPanel
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
@@ -357,4 +432,9 @@ Partial Class frmPOS
     Friend WithEvents Column6 As DataGridViewImageColumn
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Button7 As Button
+    Friend WithEvents Button4 As Button
+    Friend WithEvents MenuFlowLayoutPanel As FlowLayoutPanel
+    Friend WithEvents SizeFlowLayoutPanel As FlowLayoutPanel
+    Friend WithEvents Button8 As Button
+    Friend WithEvents Button9 As Button
 End Class
