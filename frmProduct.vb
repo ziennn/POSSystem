@@ -131,4 +131,56 @@ Public Class frmProduct
     Private Sub cboCategory_KeyPress(sender As Object, e As KeyPressEventArgs) Handles cboCategory.KeyPress
         e.Handled = True
     End Sub
+
+    Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
+        Try
+            'If no image is set, display error
+            'If OpenFileDialog1.FileName = "OpenFileDialog1" Then
+            'MsgBox("Please select image!", vbCritical)
+            'Return
+            'End If
+            'Display error msg if textboxes are empty
+            If txtDescription.Text = String.Empty Or txtPrice.Text = String.Empty Then
+                MsgBox("Please input data!", vbCritical)
+                Return
+            End If
+            'Display error msg if combo boxes are empty
+            If cboCategory.Text = String.Empty Or cboSize.Text = String.Empty Or cboStatus.Text = String.Empty Then
+                MsgBox("Please select data from the list!", vbCritical)
+                Return
+            End If
+
+
+            'Saving record 
+            If MsgBox("Update this record?", vbYesNo + vbQuestion) = vbYes Then
+                Dim mstream As New MemoryStream
+                PictureBox1.BackgroundImage.Save(mstream, System.Drawing.Imaging.ImageFormat.Jpeg)
+                Dim arrImage() As Byte = mstream.GetBuffer
+
+                cn.Open()
+                cm = New MySqlCommand("update tblproduct set description=@description, price=@price, category=@category, size=@size, weight=@weight, image=@image where id=@id", cn)
+                With cm.Parameters
+                    .AddWithValue("@description", txtDescription.Text)
+                    .AddWithValue("@price", CDbl(txtPrice.Text))
+                    .AddWithValue("@category", cboCategory.Text)
+                    .AddWithValue("@size", cboSize.Text)
+                    .AddWithValue("@weight", CheckBox1.Checked.ToString)
+                    .AddWithValue("@image", arrImage)
+                    .AddWithValue("@id", txtID.Text)
+                End With
+                cm.ExecuteNonQuery()
+                cn.Close()
+                MsgBox("Record has been successfully updated!", vbInformation)
+                Clear()
+
+                With frmProductList
+                    .LoadRecord()
+                End With
+                Me.Dispose()
+            End If
+        Catch ex As Exception
+            cn.Close()
+            MsgBox(ex.Message, vbCritical)
+        End Try
+    End Sub
 End Class

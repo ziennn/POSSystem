@@ -213,7 +213,7 @@ Partial Class frmPOS
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.ForeColor = System.Drawing.Color.White
-        Me.Button1.Location = New System.Drawing.Point(2, -1)
+        Me.Button1.Location = New System.Drawing.Point(3, -1)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(170, 49)
         Me.Button1.TabIndex = 0

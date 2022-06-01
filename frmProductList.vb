@@ -65,11 +65,28 @@ Public Class frmProductList
                 End While
                 dr.Close()
                 cn.Close()
+
+                .LoadCategory()
+
                 .btnSave.Enabled = False
                 .btnUpdate.Enabled = True
                 .ShowDialog()
             End With
+
+        ElseIf colname = "colDelete" Then
+            If MsgBox("Delete this record?", vbYesNo + vbQuestion) = vbYes Then
+                cn.Open()
+                cm = New MySqlCommand("delete from tblproduct where id like '" & DataGridView1.Rows(e.RowIndex).Cells(1).Value.ToString & "'", cn)
+                cm.ExecuteNonQuery()
+                cn.Close()
+                MsgBox("Record has been successfully deleted!", vbInformation)
+                LoadRecord()
+            End If
         End If
 
+    End Sub
+
+    Private Sub ToolStripButton2_Click(sender As Object, e As EventArgs) Handles ToolStripButton2.Click
+        Me.Dispose()
     End Sub
 End Class

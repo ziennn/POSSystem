@@ -157,9 +157,10 @@ Partial Class frmProduct
         'CheckBox1
         '
         Me.CheckBox1.AutoSize = True
+        Me.CheckBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CheckBox1.Location = New System.Drawing.Point(108, 288)
         Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(81, 25)
+        Me.CheckBox1.Size = New System.Drawing.Size(77, 25)
         Me.CheckBox1.TabIndex = 13
         Me.CheckBox1.Text = "Weight"
         Me.CheckBox1.UseVisualStyleBackColor = True
@@ -217,7 +218,7 @@ Partial Class frmProduct
         Me.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnUpdate.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnUpdate.ForeColor = System.Drawing.Color.White
-        Me.btnUpdate.Location = New System.Drawing.Point(234, 323)
+        Me.btnUpdate.Location = New System.Drawing.Point(231, 323)
         Me.btnUpdate.Name = "btnUpdate"
         Me.btnUpdate.Size = New System.Drawing.Size(120, 32)
         Me.btnUpdate.TabIndex = 18
@@ -232,7 +233,7 @@ Partial Class frmProduct
         Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button3.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button3.ForeColor = System.Drawing.Color.Black
-        Me.Button3.Location = New System.Drawing.Point(360, 323)
+        Me.Button3.Location = New System.Drawing.Point(354, 323)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(120, 32)
         Me.Button3.TabIndex = 19
@@ -247,7 +248,7 @@ Partial Class frmProduct
         Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button4.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button4.ForeColor = System.Drawing.Color.White
-        Me.Button4.Location = New System.Drawing.Point(535, 246)
+        Me.Button4.Location = New System.Drawing.Point(535, 244)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(196, 32)
         Me.Button4.TabIndex = 20

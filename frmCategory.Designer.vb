@@ -61,7 +61,7 @@ Partial Class frmCategory
         '
         'txtCategory
         '
-        Me.txtCategory.BackColor = System.Drawing.SystemColors.Control
+        Me.txtCategory.BackColor = System.Drawing.Color.WhiteSmoke
         Me.txtCategory.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtCategory.Location = New System.Drawing.Point(45, 70)
         Me.txtCategory.Name = "txtCategory"
@@ -96,6 +96,7 @@ Partial Class frmCategory
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 21.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.WhiteSmoke
         Me.ClientSize = New System.Drawing.Size(523, 167)
         Me.ControlBox = False
         Me.Controls.Add(Me.Button1)
