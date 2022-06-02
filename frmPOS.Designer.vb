@@ -40,7 +40,7 @@ Partial Class frmPOS
         Me.btnProduct = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnNewOrder = New System.Windows.Forms.Button()
         Me.CategoryFlowLayoutPanel = New System.Windows.Forms.FlowLayoutPanel()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -51,6 +51,7 @@ Partial Class frmPOS
         Me.Column6 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.MenuFlowLayoutPanel = New System.Windows.Forms.FlowLayoutPanel()
         Me.cboMenuSize = New System.Windows.Forms.ComboBox()
+        Me.btnTable = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
@@ -104,13 +105,14 @@ Partial Class frmPOS
         '
         'Panel2
         '
+        Me.Panel2.Controls.Add(Me.btnTable)
         Me.Panel2.Controls.Add(Me.Button7)
         Me.Panel2.Controls.Add(Me.Button6)
         Me.Panel2.Controls.Add(Me.Button5)
         Me.Panel2.Controls.Add(Me.btnProduct)
         Me.Panel2.Controls.Add(Me.Button3)
         Me.Panel2.Controls.Add(Me.Button2)
-        Me.Panel2.Controls.Add(Me.Button1)
+        Me.Panel2.Controls.Add(Me.btnNewOrder)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel2.Location = New System.Drawing.Point(0, 648)
         Me.Panel2.Name = "Panel2"
@@ -125,7 +127,7 @@ Partial Class frmPOS
         Me.Button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button7.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button7.ForeColor = System.Drawing.Color.White
-        Me.Button7.Location = New System.Drawing.Point(863, -2)
+        Me.Button7.Location = New System.Drawing.Point(1035, -2)
         Me.Button7.Name = "Button7"
         Me.Button7.Size = New System.Drawing.Size(170, 50)
         Me.Button7.TabIndex = 6
@@ -155,7 +157,7 @@ Partial Class frmPOS
         Me.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button5.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button5.ForeColor = System.Drawing.Color.White
-        Me.Button5.Location = New System.Drawing.Point(691, -2)
+        Me.Button5.Location = New System.Drawing.Point(863, -2)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(170, 50)
         Me.Button5.TabIndex = 4
@@ -207,20 +209,20 @@ Partial Class frmPOS
         Me.Button2.Text = "PAYMENT"
         Me.Button2.UseVisualStyleBackColor = False
         '
-        'Button1
+        'btnNewOrder
         '
-        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(212, Byte), Integer), CType(CType(103, Byte), Integer), CType(CType(28, Byte), Integer))
-        Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.Color.White
-        Me.Button1.Location = New System.Drawing.Point(3, -1)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(170, 49)
-        Me.Button1.TabIndex = 0
-        Me.Button1.Text = "NEW ORDER"
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.btnNewOrder.BackColor = System.Drawing.Color.FromArgb(CType(CType(212, Byte), Integer), CType(CType(103, Byte), Integer), CType(CType(28, Byte), Integer))
+        Me.btnNewOrder.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnNewOrder.FlatAppearance.BorderSize = 0
+        Me.btnNewOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnNewOrder.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnNewOrder.ForeColor = System.Drawing.Color.White
+        Me.btnNewOrder.Location = New System.Drawing.Point(3, -1)
+        Me.btnNewOrder.Name = "btnNewOrder"
+        Me.btnNewOrder.Size = New System.Drawing.Size(170, 49)
+        Me.btnNewOrder.TabIndex = 0
+        Me.btnNewOrder.Text = "NEW ORDER"
+        Me.btnNewOrder.UseVisualStyleBackColor = False
         '
         'CategoryFlowLayoutPanel
         '
@@ -338,6 +340,21 @@ Partial Class frmPOS
         Me.cboMenuSize.Size = New System.Drawing.Size(187, 29)
         Me.cboMenuSize.TabIndex = 4
         '
+        'btnTable
+        '
+        Me.btnTable.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(124, Byte), Integer), CType(CType(33, Byte), Integer))
+        Me.btnTable.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnTable.FlatAppearance.BorderSize = 0
+        Me.btnTable.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnTable.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnTable.ForeColor = System.Drawing.Color.White
+        Me.btnTable.Location = New System.Drawing.Point(691, -2)
+        Me.btnTable.Name = "btnTable"
+        Me.btnTable.Size = New System.Drawing.Size(170, 50)
+        Me.btnTable.TabIndex = 7
+        Me.btnTable.Text = "MANAGE TABLE"
+        Me.btnTable.UseVisualStyleBackColor = False
+        '
         'frmPOS
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -369,7 +386,7 @@ Partial Class frmPOS
     Friend WithEvents btnProduct As Button
     Friend WithEvents Button3 As Button
     Friend WithEvents Button2 As Button
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnNewOrder As Button
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents CategoryFlowLayoutPanel As FlowLayoutPanel
@@ -384,4 +401,5 @@ Partial Class frmPOS
     Friend WithEvents Button7 As Button
     Friend WithEvents MenuFlowLayoutPanel As FlowLayoutPanel
     Friend WithEvents cboMenuSize As ComboBox
+    Friend WithEvents btnTable As Button
 End Class

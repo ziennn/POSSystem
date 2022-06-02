@@ -117,4 +117,18 @@ Public Class frmPOS
         LoadMenu()
     End Sub
 
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnNewOrder.Click
+        With frmSelectTable
+            .LoadTable()
+            .ShowDialog()
+        End With
+    End Sub
+
+    Private Sub btnTable_Click(sender As Object, e As EventArgs) Handles btnTable.Click
+        With frmTable
+            .btnUpdate.Enabled = False
+            .Loadrecord()
+            .ShowDialog()
+        End With
+    End Sub
 End Class

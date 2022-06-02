@@ -37,7 +37,7 @@ Partial Class frmSelectTable
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(998, 5)
+        Me.Panel1.Size = New System.Drawing.Size(1036, 5)
         Me.Panel1.TabIndex = 3
         '
         'ToolStrip1
@@ -46,7 +46,7 @@ Partial Class frmSelectTable
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripLabel1, Me.ToolStripButton2})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 5)
         Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(998, 27)
+        Me.ToolStrip1.Size = New System.Drawing.Size(1036, 27)
         Me.ToolStrip1.TabIndex = 4
         Me.ToolStrip1.Text = "ToolStrip1"
         '
@@ -71,14 +71,14 @@ Partial Class frmSelectTable
         '
         Me.TableFlowLayoutPanel.Location = New System.Drawing.Point(9, 38)
         Me.TableFlowLayoutPanel.Name = "TableFlowLayoutPanel"
-        Me.TableFlowLayoutPanel.Size = New System.Drawing.Size(980, 451)
+        Me.TableFlowLayoutPanel.Size = New System.Drawing.Size(1017, 548)
         Me.TableFlowLayoutPanel.TabIndex = 5
         '
         'frmSelectTable
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 21.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(998, 498)
+        Me.ClientSize = New System.Drawing.Size(1036, 598)
         Me.ControlBox = False
         Me.Controls.Add(Me.TableFlowLayoutPanel)
         Me.Controls.Add(Me.ToolStrip1)
