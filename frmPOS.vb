@@ -45,6 +45,8 @@ Public Class frmPOS
             pic.Height = 100
             pic.BackgroundImageLayout = ImageLayout.Stretch
             pic.Cursor = Cursors.Hand
+            'get tag of id
+            pic.Tag = dr.Item("id").ToString
 
             Dim ms As New MemoryStream(array)
             Dim bitmap As New System.Drawing.Bitmap(ms)
@@ -60,6 +62,8 @@ Public Class frmPOS
             lblDesc.Dock = DockStyle.Top
             lblDesc.AutoSize = False
             lblDesc.Cursor = Cursors.Hand
+            lblDesc.Tag = dr.Item("id").ToString
+
 
             'Price in Product menu pic
             lblPrice = New Label
@@ -71,11 +75,17 @@ Public Class frmPOS
             lblPrice.Dock = DockStyle.Bottom
             lblPrice.AutoSize = True
             lblPrice.Cursor = Cursors.Hand
+            lblPrice.Tag = dr.Item("id").ToString
 
             'Display image w/ desc and price in menu 
             pic.Controls.Add(lblDesc)
             pic.Controls.Add(lblPrice)
             MenuFlowLayoutPanel.Controls.Add(pic)
+
+            '11 | add event
+            AddHandler pic.Click, AddressOf select_Click
+            AddHandler lblDesc.Click, AddressOf select_Click
+            AddHandler lblPrice.Click, AddressOf select_Click
 
 
         End While
@@ -102,21 +112,66 @@ Public Class frmPOS
 
 
             'Filtering
-            AddHandler btnCategory.Click, AddressOf filter_click
+            AddHandler btnCategory.Click, AddressOf Filter_click
 
         End While
         dr.Close()
         cn.Close()
     End Sub
+    '11 | Create event for selecting item
+    Public Sub Select_Click(sender As Object, e As EventArgs)
+        Try
+            Dim price As Double
 
+            Dim id As String = sender.tag.ToString()
+
+            cn.Open()
+            cm = New MySqlCommand("select * From tblproduct where id like '" & id & "'", cn)
+            dr = cm.ExecuteReader
+            dr.Read()
+            If dr.HasRows Then
+                price = CDbl(dr.Item("price").ToString)
+
+            End If
+            dr.Close()
+            cn.Close()
+
+            'pass here
+            AddToCart(id, price)
+            'MsgBox("")
+        Catch ex As Exception
+            cn.Close()
+            MsgBox(ex.Message, vbCritical)
+        End Try
+    End Sub
+
+    Sub AddToCart(ByVal id As String, ByVal price As Double)
+        Dim sdate As String = Now.ToString("yyyy-MM-dd")
+        cn.Open()
+        cm = New MySqlCommand("insert into tblcart (transno, pid, price, tdate, tableno)values(@transno, @pid, @price, @tdate, @tableno)", cn)
+        With cm
+            .Parameters.AddWithValue("@transno", lblTransNo.Text)
+            .Parameters.AddWithValue("@pid", id)
+            .Parameters.AddWithValue("@price", price)
+            .Parameters.AddWithValue("@tdate", sdate)
+            .Parameters.AddWithValue("@tableno", lbltable.Text)
+            .ExecuteNonQuery()
+        End With
+        cn.Close()
+
+        cn.Open()
+        cm = New MySqlCommand("update tblcart set total = price * qty", cn)
+        cm.ExecuteNonQuery()
+        cn.Close()
+
+    End Sub
 
     'create event
-    Public Sub filter_click(sender As Object, e As EventArgs)
+    Public Sub Filter_click(sender As Object, e As EventArgs)
         If lblTransNo.Text = String.Empty Then
             MsgBox("Click New Order First", vbCritical)
             Return
         End If
-
 
         _filter = sender.text.ToString
 
@@ -148,18 +203,22 @@ Public Class frmPOS
             cm = New MySqlCommand("select * from tblcart where transno like '" & sdate & "%' order by id desc", cn)
             dr = cm.ExecuteReader
             dr.Read()
+
             If dr.HasRows Then
                 GetTransno = CLng(dr.Item("transno").ToString) + 1
             Else
                 GetTransno = sdate & "0001"
             End If
+
             dr.Close()
             cn.Close()
             Return GetTransno
+
         Catch ex As Exception
             cn.Close()
             MsgBox(ex.Message, vbCritical)
         End Try
+        Return GetTransno()
     End Function
 
 End Class
