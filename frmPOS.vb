@@ -9,10 +9,14 @@ Public Class frmPOS
     Dim lblDesc As New Label
     Dim lblPrice As New Label
 
+
+    Dim _filter As String = ""
+
     Private Sub frmPOS_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Connection()
         LoadCategory()
         LoadMenu()
+
     End Sub
 
     Private Sub btnProduct_Click(sender As Object, e As EventArgs) Handles btnProduct.Click
@@ -26,8 +30,9 @@ Public Class frmPOS
     Sub LoadMenu()
         MenuFlowLayoutPanel.AutoScroll = True
         MenuFlowLayoutPanel.Controls.Clear()
+
         cn.Open()
-        cm = New MySqlCommand("select image, id, description, price, size, weight, status from tblproduct", cn)
+        cm = New MySqlCommand("select image, id, description, price, size, weight, status from tblproduct where category like '" & _filter & "%' order by description", cn)
         dr = cm.ExecuteReader
         While dr.Read
             Dim len As Long = dr.GetBytes(0, 0, Nothing, 0, 0)
@@ -95,9 +100,21 @@ Public Class frmPOS
             btnCategory.TextAlign = ContentAlignment.MiddleLeft
             CategoryFlowLayoutPanel.Controls.Add(btnCategory)
 
+
+            'Filtering
+            AddHandler btnCategory.Click, AddressOf filter_click
+
         End While
         dr.Close()
         cn.Close()
+    End Sub
+
+
+    'create event
+    Public Sub filter_click(sender As Object, e As EventArgs)
+        _filter = sender.text.ToString
+
+        LoadMenu()
     End Sub
 
 End Class

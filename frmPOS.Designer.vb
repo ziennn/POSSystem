@@ -41,7 +41,6 @@ Partial Class frmPOS
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
         Me.CategoryFlowLayoutPanel = New System.Windows.Forms.FlowLayoutPanel()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -51,14 +50,11 @@ Partial Class frmPOS
         Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column6 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.MenuFlowLayoutPanel = New System.Windows.Forms.FlowLayoutPanel()
-        Me.SizeFlowLayoutPanel = New System.Windows.Forms.FlowLayoutPanel()
-        Me.Button8 = New System.Windows.Forms.Button()
-        Me.Button9 = New System.Windows.Forms.Button()
+        Me.cboMenuSize = New System.Windows.Forms.ComboBox()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.SizeFlowLayoutPanel.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -226,28 +222,13 @@ Partial Class frmPOS
         Me.Button1.Text = "NEW ORDER"
         Me.Button1.UseVisualStyleBackColor = False
         '
-        'Button4
-        '
-        Me.Button4.BackColor = System.Drawing.Color.DimGray
-        Me.Button4.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button4.FlatAppearance.BorderSize = 0
-        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button4.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button4.ForeColor = System.Drawing.Color.White
-        Me.Button4.Location = New System.Drawing.Point(3, 95)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(127, 40)
-        Me.Button4.TabIndex = 7
-        Me.Button4.Text = "LARGE"
-        Me.Button4.UseVisualStyleBackColor = False
-        '
         'CategoryFlowLayoutPanel
         '
         Me.CategoryFlowLayoutPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.CategoryFlowLayoutPanel.Font = New System.Drawing.Font("Calibri", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CategoryFlowLayoutPanel.Location = New System.Drawing.Point(2, 96)
         Me.CategoryFlowLayoutPanel.Name = "CategoryFlowLayoutPanel"
-        Me.CategoryFlowLayoutPanel.Size = New System.Drawing.Size(135, 397)
+        Me.CategoryFlowLayoutPanel.Size = New System.Drawing.Size(135, 545)
         Me.CategoryFlowLayoutPanel.TabIndex = 2
         '
         'DataGridView1
@@ -345,47 +326,17 @@ Partial Class frmPOS
         Me.MenuFlowLayoutPanel.Size = New System.Drawing.Size(854, 545)
         Me.MenuFlowLayoutPanel.TabIndex = 3
         '
-        'SizeFlowLayoutPanel
+        'cboMenuSize
         '
-        Me.SizeFlowLayoutPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.SizeFlowLayoutPanel.Controls.Add(Me.Button8)
-        Me.SizeFlowLayoutPanel.Controls.Add(Me.Button9)
-        Me.SizeFlowLayoutPanel.Controls.Add(Me.Button4)
-        Me.SizeFlowLayoutPanel.Font = New System.Drawing.Font("Calibri", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SizeFlowLayoutPanel.Location = New System.Drawing.Point(2, 496)
-        Me.SizeFlowLayoutPanel.Name = "SizeFlowLayoutPanel"
-        Me.SizeFlowLayoutPanel.Size = New System.Drawing.Size(135, 145)
-        Me.SizeFlowLayoutPanel.TabIndex = 3
-        '
-        'Button8
-        '
-        Me.Button8.BackColor = System.Drawing.Color.DimGray
-        Me.Button8.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button8.FlatAppearance.BorderSize = 0
-        Me.Button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button8.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button8.ForeColor = System.Drawing.Color.White
-        Me.Button8.Location = New System.Drawing.Point(3, 3)
-        Me.Button8.Name = "Button8"
-        Me.Button8.Size = New System.Drawing.Size(127, 40)
-        Me.Button8.TabIndex = 8
-        Me.Button8.Text = "SMALL"
-        Me.Button8.UseVisualStyleBackColor = False
-        '
-        'Button9
-        '
-        Me.Button9.BackColor = System.Drawing.Color.DimGray
-        Me.Button9.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button9.FlatAppearance.BorderSize = 0
-        Me.Button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button9.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button9.ForeColor = System.Drawing.Color.White
-        Me.Button9.Location = New System.Drawing.Point(3, 49)
-        Me.Button9.Name = "Button9"
-        Me.Button9.Size = New System.Drawing.Size(127, 40)
-        Me.Button9.TabIndex = 9
-        Me.Button9.Text = "MEDIUM"
-        Me.Button9.UseVisualStyleBackColor = False
+        Me.cboMenuSize.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.cboMenuSize.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.cboMenuSize.Font = New System.Drawing.Font("Calibri", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboMenuSize.FormattingEnabled = True
+        Me.cboMenuSize.Items.AddRange(New Object() {"SMALL", "MEDIUM", "LARGE"})
+        Me.cboMenuSize.Location = New System.Drawing.Point(807, 65)
+        Me.cboMenuSize.Name = "cboMenuSize"
+        Me.cboMenuSize.Size = New System.Drawing.Size(187, 29)
+        Me.cboMenuSize.TabIndex = 4
         '
         'frmPOS
         '
@@ -393,7 +344,7 @@ Partial Class frmPOS
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1498, 698)
         Me.ControlBox = False
-        Me.Controls.Add(Me.SizeFlowLayoutPanel)
+        Me.Controls.Add(Me.cboMenuSize)
         Me.Controls.Add(Me.MenuFlowLayoutPanel)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.CategoryFlowLayoutPanel)
@@ -407,7 +358,6 @@ Partial Class frmPOS
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.SizeFlowLayoutPanel.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -432,9 +382,6 @@ Partial Class frmPOS
     Friend WithEvents Column6 As DataGridViewImageColumn
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Button7 As Button
-    Friend WithEvents Button4 As Button
     Friend WithEvents MenuFlowLayoutPanel As FlowLayoutPanel
-    Friend WithEvents SizeFlowLayoutPanel As FlowLayoutPanel
-    Friend WithEvents Button8 As Button
-    Friend WithEvents Button9 As Button
+    Friend WithEvents cboMenuSize As ComboBox
 End Class

@@ -101,6 +101,12 @@
     <Compile Include="frmProductList.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmSelectTable.Designer.vb">
+      <DependentUpon>frmSelectTable.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmSelectTable.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Module1.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -130,6 +136,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmProductList.resx">
       <DependentUpon>frmProductList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSelectTable.resx">
+      <DependentUpon>frmSelectTable.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
