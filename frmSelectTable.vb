@@ -22,6 +22,9 @@ Public Class frmSelectTable
             btnTable.TextAlign = ContentAlignment.MiddleLeft
             TableFlowLayoutPanel.Controls.Add(btnTable)
 
+            'add handler for table no
+            AddHandler btnTable.Click, AddressOf GetTable_Click
+
 
             'Filtering
             'AddHandler btnTable.Click, AddressOf filter_click
@@ -30,4 +33,13 @@ Public Class frmSelectTable
         dr.Close()
         cn.Close()
     End Sub
+
+    Sub GetTable_Click(sender As Object, e As EventArgs)
+        Dim table As String = sender.text.ToString
+        With frmPOS
+            .lbltable.Text = table
+        End With
+        Me.Dispose()
+    End Sub
+
 End Class

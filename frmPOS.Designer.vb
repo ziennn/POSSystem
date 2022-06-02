@@ -23,12 +23,12 @@ Partial Class frmPOS
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmPOS))
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -52,6 +52,10 @@ Partial Class frmPOS
         Me.MenuFlowLayoutPanel = New System.Windows.Forms.FlowLayoutPanel()
         Me.cboMenuSize = New System.Windows.Forms.ComboBox()
         Me.btnTable = New System.Windows.Forms.Button()
+        Me.lblTransNo = New System.Windows.Forms.Label()
+        Me.lbltable = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
@@ -114,7 +118,7 @@ Partial Class frmPOS
         Me.Panel2.Controls.Add(Me.Button2)
         Me.Panel2.Controls.Add(Me.btnNewOrder)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel2.Location = New System.Drawing.Point(0, 648)
+        Me.Panel2.Location = New System.Drawing.Point(0, 655)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(1498, 50)
         Me.Panel2.TabIndex = 1
@@ -228,41 +232,42 @@ Partial Class frmPOS
         '
         Me.CategoryFlowLayoutPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.CategoryFlowLayoutPanel.Font = New System.Drawing.Font("Calibri", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CategoryFlowLayoutPanel.Location = New System.Drawing.Point(2, 96)
+        Me.CategoryFlowLayoutPanel.Location = New System.Drawing.Point(3, 141)
         Me.CategoryFlowLayoutPanel.Name = "CategoryFlowLayoutPanel"
-        Me.CategoryFlowLayoutPanel.Size = New System.Drawing.Size(135, 545)
+        Me.CategoryFlowLayoutPanel.Size = New System.Drawing.Size(135, 500)
         Me.CategoryFlowLayoutPanel.TabIndex = 2
         '
         'DataGridView1
         '
         Me.DataGridView1.AllowUserToAddRows = False
         Me.DataGridView1.BackgroundColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Calibri", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        Me.DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Calibri", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
         Me.DataGridView1.ColumnHeadersHeight = 30
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5, Me.Column6})
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Calibri", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Ivory
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle12.Font = New System.Drawing.Font("Calibri", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        DataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.Ivory
+        DataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        DataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle12
         Me.DataGridView1.EnableHeadersVisualStyles = False
-        Me.DataGridView1.Location = New System.Drawing.Point(997, 96)
+        Me.DataGridView1.Location = New System.Drawing.Point(997, 141)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowHeadersVisible = False
         Me.DataGridView1.RowHeadersWidth = 51
         Me.DataGridView1.RowTemplate.Height = 24
-        Me.DataGridView1.Size = New System.Drawing.Size(498, 545)
+        Me.DataGridView1.Size = New System.Drawing.Size(498, 500)
         Me.DataGridView1.TabIndex = 3
         '
         'Column1
@@ -276,8 +281,8 @@ Partial Class frmPOS
         'Column2
         '
         Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft
-        Me.Column2.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft
+        Me.Column2.DefaultCellStyle = DataGridViewCellStyle8
         Me.Column2.HeaderText = "DESCRIPTION"
         Me.Column2.MinimumWidth = 6
         Me.Column2.Name = "Column2"
@@ -285,8 +290,8 @@ Partial Class frmPOS
         'Column3
         '
         Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        Me.Column3.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        Me.Column3.DefaultCellStyle = DataGridViewCellStyle9
         Me.Column3.HeaderText = "PRICE"
         Me.Column3.MinimumWidth = 6
         Me.Column3.Name = "Column3"
@@ -295,8 +300,8 @@ Partial Class frmPOS
         'Column4
         '
         Me.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Column4.DefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Column4.DefaultCellStyle = DataGridViewCellStyle10
         Me.Column4.HeaderText = "ORDER"
         Me.Column4.MinimumWidth = 6
         Me.Column4.Name = "Column4"
@@ -305,8 +310,8 @@ Partial Class frmPOS
         'Column5
         '
         Me.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        Me.Column5.DefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        Me.Column5.DefaultCellStyle = DataGridViewCellStyle11
         Me.Column5.HeaderText = "TOTAL"
         Me.Column5.MinimumWidth = 6
         Me.Column5.Name = "Column5"
@@ -323,9 +328,9 @@ Partial Class frmPOS
         'MenuFlowLayoutPanel
         '
         Me.MenuFlowLayoutPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.MenuFlowLayoutPanel.Location = New System.Drawing.Point(140, 96)
+        Me.MenuFlowLayoutPanel.Location = New System.Drawing.Point(140, 141)
         Me.MenuFlowLayoutPanel.Name = "MenuFlowLayoutPanel"
-        Me.MenuFlowLayoutPanel.Size = New System.Drawing.Size(854, 545)
+        Me.MenuFlowLayoutPanel.Size = New System.Drawing.Size(854, 500)
         Me.MenuFlowLayoutPanel.TabIndex = 3
         '
         'cboMenuSize
@@ -335,7 +340,7 @@ Partial Class frmPOS
         Me.cboMenuSize.Font = New System.Drawing.Font("Calibri", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboMenuSize.FormattingEnabled = True
         Me.cboMenuSize.Items.AddRange(New Object() {"SMALL", "MEDIUM", "LARGE"})
-        Me.cboMenuSize.Location = New System.Drawing.Point(807, 65)
+        Me.cboMenuSize.Location = New System.Drawing.Point(807, 106)
         Me.cboMenuSize.Name = "cboMenuSize"
         Me.cboMenuSize.Size = New System.Drawing.Size(187, 29)
         Me.cboMenuSize.TabIndex = 4
@@ -355,12 +360,58 @@ Partial Class frmPOS
         Me.btnTable.Text = "MANAGE TABLE"
         Me.btnTable.UseVisualStyleBackColor = False
         '
+        'lblTransNo
+        '
+        Me.lblTransNo.AutoSize = True
+        Me.lblTransNo.Font = New System.Drawing.Font("Calibri", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTransNo.ForeColor = System.Drawing.Color.Crimson
+        Me.lblTransNo.Location = New System.Drawing.Point(171, 67)
+        Me.lblTransNo.Name = "lblTransNo"
+        Me.lblTransNo.Size = New System.Drawing.Size(0, 23)
+        Me.lblTransNo.TabIndex = 5
+        '
+        'lbltable
+        '
+        Me.lbltable.AutoSize = True
+        Me.lbltable.Font = New System.Drawing.Font("Calibri", 11.0!)
+        Me.lbltable.ForeColor = System.Drawing.Color.Crimson
+        Me.lbltable.Location = New System.Drawing.Point(171, 106)
+        Me.lbltable.Name = "lbltable"
+        Me.lbltable.Size = New System.Drawing.Size(0, 23)
+        Me.lbltable.TabIndex = 6
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Calibri", 11.0!)
+        Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Label4.Location = New System.Drawing.Point(66, 106)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(90, 23)
+        Me.Label4.TabIndex = 8
+        Me.Label4.Text = "TABLE NO:"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Calibri", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Label5.Location = New System.Drawing.Point(0, 67)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(156, 23)
+        Me.Label5.TabIndex = 7
+        Me.Label5.Text = "TRANSACTION NO:"
+        '
         'frmPOS
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1498, 698)
+        Me.ClientSize = New System.Drawing.Size(1498, 705)
         Me.ControlBox = False
+        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.Label5)
+        Me.Controls.Add(Me.lbltable)
+        Me.Controls.Add(Me.lblTransNo)
         Me.Controls.Add(Me.cboMenuSize)
         Me.Controls.Add(Me.MenuFlowLayoutPanel)
         Me.Controls.Add(Me.DataGridView1)
@@ -376,6 +427,7 @@ Partial Class frmPOS
         Me.Panel2.ResumeLayout(False)
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -402,4 +454,8 @@ Partial Class frmPOS
     Friend WithEvents MenuFlowLayoutPanel As FlowLayoutPanel
     Friend WithEvents cboMenuSize As ComboBox
     Friend WithEvents btnTable As Button
+    Friend WithEvents lblTransNo As Label
+    Friend WithEvents lbltable As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label5 As Label
 End Class

@@ -112,14 +112,22 @@ Public Class frmPOS
 
     'create event
     Public Sub filter_click(sender As Object, e As EventArgs)
+        If lblTransNo.Text = String.Empty Then
+            MsgBox("Click New Order First", vbCritical)
+            Return
+        End If
+
+
         _filter = sender.text.ToString
 
         LoadMenu()
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnNewOrder.Click
+        lblTransNo.Text = GetTransno()
         With frmSelectTable
             .LoadTable()
+
             .ShowDialog()
         End With
     End Sub
@@ -131,4 +139,27 @@ Public Class frmPOS
             .ShowDialog()
         End With
     End Sub
+
+    'Transaction num
+    Function GetTransno() As String
+        Try
+            Dim sdate As String = Now.ToString("yyyyMMdd")
+            cn.Open()
+            cm = New MySqlCommand("select * from tblcart where transno like '" & sdate & "%' order by id desc", cn)
+            dr = cm.ExecuteReader
+            dr.Read()
+            If dr.HasRows Then
+                GetTransno = CLng(dr.Item("transno").ToString) + 1
+            Else
+                GetTransno = sdate & "0001"
+            End If
+            dr.Close()
+            cn.Close()
+            Return GetTransno
+        Catch ex As Exception
+            cn.Close()
+            MsgBox(ex.Message, vbCritical)
+        End Try
+    End Function
+
 End Class
