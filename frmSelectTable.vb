@@ -42,4 +42,7 @@ Public Class frmSelectTable
         Me.Dispose()
     End Sub
 
+    Private Sub TableFlowLayoutPanel_Paint(sender As Object, e As PaintEventArgs) Handles TableFlowLayoutPanel.Paint
+
+    End Sub
 End Class

@@ -122,7 +122,7 @@ Public Class frmPOS
     Public Sub Select_Click(sender As Object, e As EventArgs)
         Try
             Dim price As Double
-
+            Dim weight As Boolean
             Dim id As String = sender.tag.ToString()
 
             cn.Open()
@@ -131,39 +131,40 @@ Public Class frmPOS
             dr.Read()
             If dr.HasRows Then
                 price = CDbl(dr.Item("price").ToString)
-
+                weight = CBool(dr.Item("weight").ToString)
             End If
             dr.Close()
             cn.Close()
 
-            'pass here
-            AddToCart(id, price)
+            '12
+            With frmQty
+                'pass here
+                .AddToCart(id, price, weight)
+                .Show()
+            End With
+
+
             'MsgBox("")
         Catch ex As Exception
             cn.Close()
             MsgBox(ex.Message, vbCritical)
         End Try
     End Sub
-
-    Sub AddToCart(ByVal id As String, ByVal price As Double)
-        Dim sdate As String = Now.ToString("yyyy-MM-dd")
+    '12 |
+    Sub LoadCart()
+        Dim _total As Double
+        DataGridView1.Rows.Clear()
         cn.Open()
-        cm = New MySqlCommand("insert into tblcart (transno, pid, price, tdate, tableno)values(@transno, @pid, @price, @tdate, @tableno)", cn)
-        With cm
-            .Parameters.AddWithValue("@transno", lblTransNo.Text)
-            .Parameters.AddWithValue("@pid", id)
-            .Parameters.AddWithValue("@price", price)
-            .Parameters.AddWithValue("@tdate", sdate)
-            .Parameters.AddWithValue("@tableno", lbltable.Text)
-            .ExecuteNonQuery()
-        End With
+        cm = New MySqlCommand("select c.id, p.description, p.size, c.price, c.qty, c.total from tblcart as c inner join tblproduct as p on p.id = c.pid where c.transno like '" & lblTransNo.Text & "'", cn)
+        dr = cm.ExecuteReader
+        While dr.Read
+            _total += CDbl(dr.Item("total").ToString)
+            DataGridView1.Rows.Add(dr.Item("id").ToString, dr.Item("description").ToString, dr.Item("size").ToString, dr.Item("price").ToString, dr.Item("qty").ToString, dr.Item("total").ToString)
+        End While
+        dr.Close()
         cn.Close()
 
-        cn.Open()
-        cm = New MySqlCommand("update tblcart set total = price * qty", cn)
-        cm.ExecuteNonQuery()
-        cn.Close()
-
+        lblTotal.Text = Format(_total, "#,##0.00")
     End Sub
 
     'create event
@@ -200,7 +201,7 @@ Public Class frmPOS
         Try
             Dim sdate As String = Now.ToString("yyyyMMdd")
             cn.Open()
-            cm = New MySqlCommand("select * from tblcart where transno like '" & sdate & "%' order by id desc", cn)
+            cm = New MySqlCommand("Select * from tblcart where transno Like '" & sdate & "%' order by id desc", cn)
             dr = cm.ExecuteReader
             dr.Read()
 
@@ -221,4 +222,18 @@ Public Class frmPOS
         Return GetTransno()
     End Function
 
+    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+        Dim colName As String = DataGridView1.Columns(e.ColumnIndex).Name
+        If colName = "colRemove" Then
+            If MsgBox("Remove this item from the list?", vbYesNo + vbQuestion) = vbYes Then
+                cn.Open()
+                cm = New MySqlCommand("delete from tblcart where id like '" & DataGridView1.Rows(e.RowIndex).Cells(0).Value.ToString & "'", cn)
+                cm.ExecuteNonQuery()
+                cn.Close()
+                MsgBox("Item successfully removed from the cart!", vbInformation)
+                LoadCart()
+            End If
+        End If
+
+    End Sub
 End Class

@@ -64,10 +64,11 @@ Public Class frmProduct
                 MsgBox("Record has been successfully saved!", vbInformation)
                 Clear()
 
+
                 With frmProductList
                     .LoadRecord()
                 End With
-
+                Me.Dispose()
             End If
         Catch ex As Exception
             cn.Close()
@@ -85,14 +86,6 @@ Public Class frmProduct
         End While
         dr.Close()
         cn.Close()
-    End Sub
-
-    Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboCategory.SelectedIndexChanged
-
-    End Sub
-
-    Private Sub txtPrice_TextChanged(sender As Object, e As EventArgs) Handles txtPrice.TextChanged
-
     End Sub
 
     Sub Clear()
@@ -124,21 +117,13 @@ Public Class frmProduct
         Clear()
     End Sub
 
-    Private Sub frmProduct_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
-
     Private Sub cboCategory_KeyPress(sender As Object, e As KeyPressEventArgs) Handles cboCategory.KeyPress
         e.Handled = True
     End Sub
 
     Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
         Try
-            'If no image is set, display error
-            'If OpenFileDialog1.FileName = "OpenFileDialog1" Then
-            'MsgBox("Please select image!", vbCritical)
-            'Return
-            'End If
+
             'Display error msg if textboxes are empty
             If txtDescription.Text = String.Empty Or txtPrice.Text = String.Empty Then
                 MsgBox("Please input data!", vbCritical)
@@ -182,5 +167,9 @@ Public Class frmProduct
             cn.Close()
             MsgBox(ex.Message, vbCritical)
         End Try
+    End Sub
+
+    Private Sub txtPrice_TextChanged(sender As Object, e As EventArgs) Handles txtPrice.TextChanged
+
     End Sub
 End Class

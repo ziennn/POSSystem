@@ -99,16 +99,16 @@ Partial Class frmProduct
         'txtPrice
         '
         Me.txtPrice.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.txtPrice.Location = New System.Drawing.Point(111, 215)
+        Me.txtPrice.Location = New System.Drawing.Point(111, 179)
         Me.txtPrice.Name = "txtPrice"
-        Me.txtPrice.Size = New System.Drawing.Size(410, 28)
+        Me.txtPrice.Size = New System.Drawing.Size(187, 28)
         Me.txtPrice.TabIndex = 8
         '
         'Label4
         '
         Me.Label4.AutoSize = True
         Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Label4.Location = New System.Drawing.Point(18, 215)
+        Me.Label4.Location = New System.Drawing.Point(18, 179)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(44, 21)
         Me.Label4.TabIndex = 7
@@ -139,7 +139,7 @@ Partial Class frmProduct
         Me.cboStatus.BackColor = System.Drawing.Color.WhiteSmoke
         Me.cboStatus.FormattingEnabled = True
         Me.cboStatus.Items.AddRange(New Object() {"AVAILABLE", "NOT AVAILABLE"})
-        Me.cboStatus.Location = New System.Drawing.Point(111, 249)
+        Me.cboStatus.Location = New System.Drawing.Point(111, 218)
         Me.cboStatus.Name = "cboStatus"
         Me.cboStatus.Size = New System.Drawing.Size(410, 29)
         Me.cboStatus.TabIndex = 12
@@ -148,7 +148,7 @@ Partial Class frmProduct
         '
         Me.Label6.AutoSize = True
         Me.Label6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Label6.Location = New System.Drawing.Point(18, 252)
+        Me.Label6.Location = New System.Drawing.Point(18, 221)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(54, 21)
         Me.Label6.TabIndex = 11
@@ -158,7 +158,7 @@ Partial Class frmProduct
         '
         Me.CheckBox1.AutoSize = True
         Me.CheckBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.CheckBox1.Location = New System.Drawing.Point(108, 288)
+        Me.CheckBox1.Location = New System.Drawing.Point(111, 253)
         Me.CheckBox1.Name = "CheckBox1"
         Me.CheckBox1.Size = New System.Drawing.Size(77, 25)
         Me.CheckBox1.TabIndex = 13
@@ -169,17 +169,17 @@ Partial Class frmProduct
         '
         Me.cboSize.BackColor = System.Drawing.Color.WhiteSmoke
         Me.cboSize.FormattingEnabled = True
-        Me.cboSize.Items.AddRange(New Object() {"SMALL", "MEDIUM", "LARGE"})
-        Me.cboSize.Location = New System.Drawing.Point(111, 178)
+        Me.cboSize.Items.AddRange(New Object() {"S", "M", "L"})
+        Me.cboSize.Location = New System.Drawing.Point(371, 179)
         Me.cboSize.Name = "cboSize"
-        Me.cboSize.Size = New System.Drawing.Size(410, 29)
+        Me.cboSize.Size = New System.Drawing.Size(149, 29)
         Me.cboSize.TabIndex = 15
         '
         'Label7
         '
         Me.Label7.AutoSize = True
         Me.Label7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Label7.Location = New System.Drawing.Point(18, 178)
+        Me.Label7.Location = New System.Drawing.Point(304, 182)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(37, 21)
         Me.Label7.TabIndex = 14

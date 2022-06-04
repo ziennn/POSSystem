@@ -12,7 +12,7 @@ Module Module1
         cn = New MySqlConnection
         With cn
             'enter all connection properties here
-            
+
         End With
     End Sub
 End Module
